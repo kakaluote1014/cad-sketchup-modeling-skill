@@ -1,0 +1,4 @@
+interface:
+  display_name: "CAD → SketchUp 建模教学规范"
+  short_description: "面向建筑学生的教学规范，指导连接现成 MCP、准备底图、分步建模与检查"
+  default_prompt: "使用 $cad-sketchup-mcp，按教学规范检查我的连接和底图准备，再指导指定楼层的分步建模。"

@@ -1,0 +1,20 @@
+# Keep local runtimes, configuration and real projects out of the teaching repo.
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+_build/
+validation/sources/
+validation/install-smoke/
+validation/workspace-before.json
+*.skp
+*.skb
+*.dwg
+*.dxf
+*.rbz
+*.bak

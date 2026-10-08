@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0",
+  "status": "passed",
+  "skill_files": 8,
+  "local_links": 22,
+  "toml_examples": 1,
+  "utf8_and_private_content_scan": "passed",
+  "zip_members_and_bytes": "passed",
+  "yaml_parser": "not run by this stdlib script; see initial validation",
+  "live_mcp": "not tested",
+  "student_trial": "not tested",
+  "archive_sha256": "1befc9e02837c5935006283ac7e374fa3d7ab27879fad96a265f79fafaa1baa1",
+  "skill_sha256": {
+    "README.md": "3a403f32fbe977c409d1bfae72265ae16c601ca675aa86b5d77183221b1253aa",
+    "SKILL.md": "f1433bae2fe086aa77b551215ed88e6a713bf58d910d10bf96790bf1a99430c8",
+    "agents/openai.yaml": "2492e53242e07438f0731322a969c60841801dbf94187ad2efd953425c060d97",
+    "references/cad-preparation.md": "e021c56906e15158755728d533534639dd6231845cf981c3e9cf1cba0f35d734",
+    "references/install-connect.md": "c66e286f3393d3eb794af5ea0a4071ea4bf1866e29073534e277de6357acd6ff",
+    "references/modeling.md": "2654099447b57895253865d52ed1eda053cef58a9c1fc10bb70dcdda99b18a98",
+    "references/sources.md": "405a4906e4d1db518bab02532b1bc0d825ac79d72f6dc4610d9ada53a80d26a0",
+    "references/validation.md": "d35cf3088b97424fbeff6bd61a7a2aa7dcf7a38c649aa2bf5ff3c8e7e465df23"
+  }
+}
