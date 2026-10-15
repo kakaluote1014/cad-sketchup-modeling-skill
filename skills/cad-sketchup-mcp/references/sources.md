@@ -2,6 +2,8 @@
 
 核实日期：2026-10-08。以下是教程依据和维护记录，学生不必全部阅读。本 Skill 不包含第三方源码，不实现、改造或替代 MCP。
 
+2026-10-09 练习补充：DXF 的 INSUNITS=4 是毫米标记，依据 [Autodesk INSUNITS 文档](https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-Core/files/GUID-A58A87BB-482B-4042-A00A-EEF55A2B4FD8.htm)；文件读写与单位查询依据 [ezdxf 单位文档](https://ezdxf.readthedocs.io/en/stable/concepts/units.html)。标记仍不能替代导入后的两段实际尺寸检查。练习几何与图示为本仓库原创、明确的教学数据，不是网上项目或真实软件截图；软件实机导入未验证。
+
 | 核实事项 | 一手来源 | 边界 |
 |---|---|---|
 | 社区 sketchup-mcp2 由 zinin 维护，源于 mhyrr/sketchup-mcp；不是 Trimble 官方产品 | [维护者仓库](https://github.com/zinin/sketchup-mcp2)、[PyPI](https://pypi.org/project/sketchup-mcp2/0.3.1/) | 不混用同名项目的配置 |

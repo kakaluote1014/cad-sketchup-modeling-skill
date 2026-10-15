@@ -1,0 +1,493 @@
+{
+  "timestamp_utc": "2026-10-08T16:26:23.213713+00:00",
+  "scope": "Local static DXF geometry and PNG decode; no CAD/SU/MCP execution.",
+  "expected_from_teaching_brief": {
+    "width": 6000.0,
+    "height": 4200.0,
+    "thickness": 180.0,
+    "door": [
+      900.0,
+      1800.0
+    ],
+    "window": [
+      1500.0,
+      3000.0
+    ],
+    "wall_height": 2800.0,
+    "door_height": 2100.0,
+    "sill": 900.0,
+    "window_height": 1200.0
+  },
+  "arithmetic_epsilon_mm": 1e-07,
+  "files": [
+    {
+      "file": "practice-source.dxf",
+      "sha256": "6265b9f5d1df53ab0e90377dce7798ae0e1080514655dc4e838f988d10bbd75b",
+      "dxf_version": "AC1018",
+      "insunits": 4,
+      "measurement": 1,
+      "entity_count": 55,
+      "types": {
+        "LINE": 45,
+        "ARC": 1,
+        "TEXT": 9
+      },
+      "layers": {
+        "WALL": 24,
+        "ROOM_REFERENCE": 4,
+        "DOOR_SYMBOL": 2,
+        "WINDOW_SYMBOL": 6,
+        "ANNOTATION": 19
+      },
+      "texts": [
+        "SYNTHETIC TEACHING EXERCISE - NOT A REAL PROJECT",
+        "All dimensions in mm; not universal project defaults.",
+        "A=6000 mm (outer X)",
+        "B=4200 mm (outer Y)",
+        "T=180 mm; H=2800 mm",
+        "D1: width=900; height=2100; left x=900",
+        "W1: width=1500; height=1200",
+        "sill=900; bottom y=1500",
+        "ROOM REFERENCE - DO NOT EXTRUDE"
+      ],
+      "wall_bounds": [
+        0.0,
+        0.0,
+        6000.0,
+        4200.0
+      ],
+      "room_bounds": [
+        180.0,
+        180.0,
+        5820.0,
+        4020.0
+      ],
+      "wall_area_mm2": 3110400.0,
+      "expected_wall_area_mm2": 3110400.0,
+      "wall_topology": {
+        "noded_edges": 24,
+        "vertices": 20,
+        "dangling_vertices": [],
+        "degree_counts": {
+          "2": 12,
+          "3": 8
+        }
+      },
+      "window_interior_lines_x": [
+        5880.0,
+        5940.0
+      ],
+      "checks": {
+        "millimetre_units": true,
+        "metric_measurement": true,
+        "wall_bounds": true,
+        "room_bounds": true,
+        "wall_axis_aligned": true,
+        "all_supported_entities_z0": true,
+        "arc_plane_normal": true,
+        "all_entity_types_examined": true,
+        "wall_region_matches_brief": true,
+        "wall_area_matches_brief": true,
+        "wall_no_dangling_endpoints_after_noding": true,
+        "room_closed_reference": true,
+        "door_arc_matches_opening": true,
+        "door_leaf_matches_opening": true,
+        "window_bounds_match_opening": true,
+        "window_two_interior_symbol_lines": true,
+        "semantic_layers_present": true,
+        "semantic_entity_types": true
+      },
+      "wall_region_mismatches": [],
+      "cross_layer_overlaps": [
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              180.0,
+              180.0
+            ],
+            [
+              900.0,
+              180.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              1800.0,
+              180.0
+            ],
+            [
+              5820.0,
+              180.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              180.0
+            ],
+            [
+              5820.0,
+              1500.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              3000.0
+            ],
+            [
+              5820.0,
+              4020.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WINDOW_SYMBOL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              1500.0
+            ],
+            [
+              5820.0,
+              3000.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              180.0,
+              4020.0
+            ],
+            [
+              5820.0,
+              4020.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              180.0,
+              180.0
+            ],
+            [
+              180.0,
+              4020.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "WALL",
+            "WINDOW_SYMBOL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              1500.0
+            ],
+            [
+              6000.0,
+              1500.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "WALL",
+            "WINDOW_SYMBOL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              3000.0
+            ],
+            [
+              6000.0,
+              3000.0
+            ]
+          ]
+        }
+      ],
+      "unsupported_entities": [],
+      "audit_error_count": 0,
+      "audit_fix_count": 0
+    },
+    {
+      "file": "practice-clean-reference.dxf",
+      "sha256": "89b3c0cf180d6a144355588c5c653a8a8221e989403f6c2711951a6fd51ec06a",
+      "dxf_version": "AC1018",
+      "insunits": 4,
+      "measurement": 1,
+      "entity_count": 36,
+      "types": {
+        "LINE": 35,
+        "ARC": 1
+      },
+      "layers": {
+        "WALL": 24,
+        "ROOM_REFERENCE": 4,
+        "DOOR_SYMBOL": 2,
+        "WINDOW_SYMBOL": 6
+      },
+      "texts": [],
+      "wall_bounds": [
+        0.0,
+        0.0,
+        6000.0,
+        4200.0
+      ],
+      "room_bounds": [
+        180.0,
+        180.0,
+        5820.0,
+        4020.0
+      ],
+      "wall_area_mm2": 3110400.0,
+      "expected_wall_area_mm2": 3110400.0,
+      "wall_topology": {
+        "noded_edges": 24,
+        "vertices": 20,
+        "dangling_vertices": [],
+        "degree_counts": {
+          "2": 12,
+          "3": 8
+        }
+      },
+      "window_interior_lines_x": [
+        5880.0,
+        5940.0
+      ],
+      "checks": {
+        "millimetre_units": true,
+        "metric_measurement": true,
+        "wall_bounds": true,
+        "room_bounds": true,
+        "wall_axis_aligned": true,
+        "all_supported_entities_z0": true,
+        "arc_plane_normal": true,
+        "all_entity_types_examined": true,
+        "wall_region_matches_brief": true,
+        "wall_area_matches_brief": true,
+        "wall_no_dangling_endpoints_after_noding": true,
+        "room_closed_reference": true,
+        "door_arc_matches_opening": true,
+        "door_leaf_matches_opening": true,
+        "window_bounds_match_opening": true,
+        "window_two_interior_symbol_lines": true,
+        "semantic_layers_present": true,
+        "semantic_entity_types": true
+      },
+      "wall_region_mismatches": [],
+      "cross_layer_overlaps": [
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              180.0,
+              180.0
+            ],
+            [
+              900.0,
+              180.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              1800.0,
+              180.0
+            ],
+            [
+              5820.0,
+              180.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              180.0
+            ],
+            [
+              5820.0,
+              1500.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              3000.0
+            ],
+            [
+              5820.0,
+              4020.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WINDOW_SYMBOL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              1500.0
+            ],
+            [
+              5820.0,
+              3000.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              180.0,
+              4020.0
+            ],
+            [
+              5820.0,
+              4020.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "ROOM_REFERENCE",
+            "WALL"
+          ],
+          "segment": [
+            [
+              180.0,
+              180.0
+            ],
+            [
+              180.0,
+              4020.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "WALL",
+            "WINDOW_SYMBOL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              1500.0
+            ],
+            [
+              6000.0,
+              1500.0
+            ]
+          ]
+        },
+        {
+          "layers": [
+            "WALL",
+            "WINDOW_SYMBOL"
+          ],
+          "segment": [
+            [
+              5820.0,
+              3000.0
+            ],
+            [
+              6000.0,
+              3000.0
+            ]
+          ]
+        }
+      ],
+      "unsupported_entities": [],
+      "audit_error_count": 0,
+      "audit_fix_count": 0
+    }
+  ],
+  "non_annotation_geometry_identical": true,
+  "source_has_annotations": true,
+  "clean_has_no_annotation_entities": true,
+  "image": {
+    "size": [
+      1500,
+      1140
+    ],
+    "mode": "RGB",
+    "format": "PNG",
+    "sha256": "e48b6c967591be63339ac3e917084fe9b184a3ef207f1baa879f3da2dbed6c3d",
+    "decode_verified": true
+  },
+  "vertical_relations_from_brief_only": {
+    "door_lintel_height": 700.0,
+    "window_sill_height": 900.0,
+    "window_lintel_height": 700.0
+  },
+  "limits": [
+    "No CAD/SU import, DWG conversion, face generation or SKP save verified.",
+    "2D DXF does not verify real 3D opening heights or face normals.",
+    "PNG dimensions/text require separate visual inspection.",
+    "Area fill check assumes orthogonal closed WALL outlines; unsupported entities fail coverage."
+  ],
+  "all_static_checks_pass": true
+}

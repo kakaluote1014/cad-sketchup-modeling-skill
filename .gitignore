@@ -16,5 +16,7 @@ validation/workspace-before.json
 *.skb
 *.dwg
 *.dxf
+!skills/cad-sketchup-mcp/assets/practice/practice-source.dxf
+!skills/cad-sketchup-mcp/assets/practice/practice-clean-reference.dxf
 *.rbz
 *.bak

@@ -10,11 +10,13 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "cad-sketchup-mcp"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 FILES = {
     "SKILL.md", "README.md", "agents/openai.yaml",
     "references/install-connect.md", "references/cad-preparation.md",
     "references/modeling.md", "references/sources.md", "references/validation.md",
+    "references/practice.md", "assets/practice/practice-source.dxf",
+    "assets/practice/practice-clean-reference.dxf", "assets/practice/plan-reference.png",
 }
 
 
@@ -34,7 +36,7 @@ def main() -> None:
     for path in ROOT.rglob("*"):
         if not path.is_file() or any(part in {".git", "_build", "__pycache__"} for part in path.relative_to(ROOT).parts):
             continue
-        if path.suffix not in {".md", ".yaml", ".json", ".py"}:
+        if path.suffix not in {".md", ".yaml", ".json", ".py", ".dxf"}:
             continue
         text = path.read_text(encoding="utf-8")
         if "\ufffd" in text or (path.suffix in {".md", ".yaml"} and "[TODO:" in text):
@@ -71,7 +73,7 @@ def main() -> None:
     archive = dist / f"cad-sketchup-mcp-v{VERSION}.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for name, data in contents.items():
-            info = zipfile.ZipInfo(f"cad-sketchup-mcp/{name}", (2026, 10, 8, 0, 0, 0))
+            info = zipfile.ZipInfo(f"cad-sketchup-mcp/{name}", (2026, 10, 9, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             bundle.writestr(info, data)
     with zipfile.ZipFile(archive) as bundle:
@@ -80,6 +82,14 @@ def main() -> None:
         for name, data in contents.items():
             if bundle.read(f"cad-sketchup-mcp/{name}") != data:
                 raise ValueError(f"Archive byte mismatch: {name}")
+        destination = ROOT / "_build" / f"install-smoke-v{VERSION}" / ".agents" / "skills"
+        if not destination.resolve().is_relative_to((ROOT / "_build").resolve()):
+            raise ValueError("Install smoke must remain inside the isolated build directory")
+        destination.mkdir(parents=True,exist_ok=True)
+        bundle.extractall(destination)
+        for name, data in contents.items():
+            if (destination / "cad-sketchup-mcp" / name).read_bytes() != data:
+                raise ValueError(f"Install smoke byte mismatch: {name}")
     checksum = digest(archive.read_bytes())
     if not all(path.is_file() for path in local_targets):
         raise ValueError("Local reference missing after packaging")
@@ -88,6 +98,7 @@ def main() -> None:
         "version": VERSION, "status": "passed", "skill_files": len(FILES),
         "local_links": local_links, "toml_examples": toml_examples,
         "utf8_and_private_content_scan": "passed", "zip_members_and_bytes": "passed",
+        "isolated_install_layout": "passed", "codex_ui_discovery": "not tested",
         "yaml_parser": "not run by this stdlib script; see initial validation",
         "live_mcp": "not tested", "student_trial": "not tested",
         "archive_sha256": checksum, "skill_sha256": {name: digest(data) for name, data in contents.items()},
