@@ -10,11 +10,12 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "cad-sketchup-mcp"
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 FILES = {
     "SKILL.md", "README.md", "agents/openai.yaml",
     "references/install-connect.md", "references/cad-preparation.md",
     "references/modeling.md", "references/sources.md", "references/validation.md",
+    "references/advanced-execution.md",
     "references/practice.md", "assets/practice/practice-source.dxf",
     "assets/practice/practice-clean-reference.dxf", "assets/practice/plan-reference.png",
 }
@@ -73,7 +74,7 @@ def main() -> None:
     archive = dist / f"cad-sketchup-mcp-v{VERSION}.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for name, data in contents.items():
-            info = zipfile.ZipInfo(f"cad-sketchup-mcp/{name}", (2026, 10, 9, 0, 0, 0))
+            info = zipfile.ZipInfo(f"cad-sketchup-mcp/{name}", (2026, 10, 26, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             bundle.writestr(info, data)
     with zipfile.ZipFile(archive) as bundle:
@@ -100,7 +101,7 @@ def main() -> None:
         "utf8_and_private_content_scan": "passed", "zip_members_and_bytes": "passed",
         "isolated_install_layout": "passed", "codex_ui_discovery": "not tested",
         "yaml_parser": "not run by this stdlib script; see initial validation",
-        "live_mcp": "not tested", "student_trial": "not tested",
+        "live_mcp": "not tested for v0.1.2", "student_trial": "not tested for v0.1.2",
         "archive_sha256": checksum, "skill_sha256": {name: digest(data) for name, data in contents.items()},
     }
     (ROOT / "validation" / "package-check.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

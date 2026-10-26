@@ -2,6 +2,10 @@
 
 核实日期：2026-10-08。以下是教程依据和维护记录，学生不必全部阅读。本 Skill 不包含第三方源码，不实现、改造或替代 MCP。
 
+2026-10-26 增量核实：仅复核 [Numeric 单位](https://ruby.sketchup.com/Numeric.html#mm-instance_method)、[Model 保存副本](https://ruby.sketchup.com/Sketchup/Model.html#save_copy-instance_method)与 [operation](https://ruby.sketchup.com/Sketchup/Model.html#start_operation-instance_method)、[ComponentInstance 独立化](https://ruby.sketchup.com/Sketchup/ComponentInstance.html#make_unique-instance_method)、[Page 场景与标签](https://ruby.sketchup.com/Sketchup/Page.html#layers-instance_method)。`page.layers` 表示偏离默认可见性的标签，非一概隐藏；场景未存标签时可能为 nil。operation 不能嵌套；保存副本的 API 能力不能推导出所有插件／切文件行为都安全。其余安装来源核实日期仍为原日期，本轮未重验安装、项目最新发布或跨版本兼容。
+
+增量方法来自用户确认的骑楼经验及社区项目交接，适配后只保留通用决策和条件，不复制项目脚本、真实模型或个人路径。社区原项目的恢复、批量、重开和保护结论在本轮只作经验来源，没有重新执行；数字、配色和设备参数不能当教学默认值。
+
 2026-10-09 练习补充：DXF 的 INSUNITS=4 是毫米标记，依据 [Autodesk INSUNITS 文档](https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-Core/files/GUID-A58A87BB-482B-4042-A00A-EEF55A2B4FD8.htm)；文件读写与单位查询依据 [ezdxf 单位文档](https://ezdxf.readthedocs.io/en/stable/concepts/units.html)。标记仍不能替代导入后的两段实际尺寸检查。练习几何与图示为本仓库原创、明确的教学数据，不是网上项目或真实软件截图；软件实机导入未验证。
 
 | 核实事项 | 一手来源 | 边界 |
@@ -24,4 +28,4 @@
 
 胚子助手封面是可选辅助；本轮未验证版本、下载来源与兼容性，不给未经核实的下载包、不列为必装依赖。
 
-来源查证不证明所有 SU／Windows／DWG 都兼容，也不等于实机安装或建模精度验证。历史电脑成功不能当学生电脑已通过。本轮不调用真实 SU，不声称学生试用、效率提升或返工率降低已完成。
+来源查证不证明所有 SU／Windows／DWG 都兼容，也不等于实机安装或建模精度验证。历史电脑成功不能当学生电脑已通过。本轮不调用真实 SU；用户提供的有限试用反馈与独立实机验收分开，不能宣称效率提升或返工率降低已得到证明。

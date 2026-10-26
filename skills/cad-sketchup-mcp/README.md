@@ -1,6 +1,6 @@
 # CAD → SketchUp MCP 建模教学规范
 
-当前迭代 v0.1.1 · Windows + 本机 Codex · 教学更新：2026-10-09；安装技术核实：2026-10-08。
+当前迭代 v0.1.2 · Windows + 本机 Codex · 教学更新：2026-10-26；安装技术核实：2026-10-08，未在本次重新验证安装兼容性。
 
 **Skill 提供建模方法和工作流程；要让 Codex 控制 SketchUp，还需要安装并配置 SU MCP。安装 Skill 不等于已经接通 MCP。**
 
@@ -18,7 +18,7 @@
 
 ## 下载入口
 
-- Skill：本次迭代包为 `cad-sketchup-mcp-v0.1.1.zip`，从本次交付附件或仓库 `dist/` 取得；解压得到 `cad-sketchup-mcp/SKILL.md`。[GitHub 仓库](https://github.com/kakaluote1014/cad-sketchup-modeling-skill)以 README 所示已上传版本为准，私有仓库需要访问权限。
+- Skill：本次迭代包为 `cad-sketchup-mcp-v0.1.2.zip`，从本次交付附件或仓库 `dist/` 取得；解压得到 `cad-sketchup-mcp/SKILL.md`。[GitHub 仓库](https://github.com/kakaluote1014/cad-sketchup-modeling-skill)以实际上传版本为准，私有仓库需要访问权限，本地更新不会自动发布。
 - SU MCP：[sketchup-mcp2 维护者仓库](https://github.com/zinin/sketchup-mcp2)、[v0.3.1 发布页](https://github.com/zinin/sketchup-mcp2/releases/tag/v0.3.1)。这是社区项目，不是 SketchUp／Trimble 官方产品；“项目官方来源”指维护者发布来源。
 - SketchUp 侧：[v0.3.1 签名 RBZ 扩展](https://github.com/zinin/sketchup-mcp2/releases/download/v0.3.1/mcp_for_sketchup_v0.3.1-signed.rbz)。
 - Codex 侧：[PyPI sketchup-mcp2 0.3.1](https://pypi.org/project/sketchup-mcp2/0.3.1/)，按连接教程用 uvx 运行。
@@ -69,4 +69,6 @@ MCP 和 Skill 分别取得，包内不捆绑第三方软件。已接通者跳过
 
 提供原图尺寸依据、目标楼层／副本、本次要做的构件即可；未知尺寸先列出，不必填复杂表格。
 
-方法旨在用尺寸校验和阶段检查减少返工，但尚无真实学生试用，未证明效率提升或返工率降低。实机与兼容性边界见 [验证说明](references/validation.md)。
+进入多栋多层或场景交付后，按 [分阶段建模](references/modeling.md) 的任务表选择检查深度；复杂保存、嵌套和场景问题才读 [进阶执行细节](references/advanced-execution.md)。小任务不必填写数据表或做全项目审计。
+
+方法旨在通过尺寸校验和阶段检查减少返工。已有有限学生截图与反馈，但未独立验收最终 SKP，也没有证明效率提升或返工率降低的对照数据；v0.1.2 尚未实机试用。具体边界见 [验证说明](references/validation.md)。

@@ -18,9 +18,9 @@
 
 ## 下载与安装
 
-当前迭代 v0.1.1：[取得 Skill ZIP](dist/cad-sketchup-mcp-v0.1.1.zip)。GitHub 文件页可下载原始文件，私有仓库需要访问权限；保留 [v0.1.0 首版包](dist/cad-sketchup-mcp-v0.1.0.zip)。
+当前迭代 v0.1.2：[取得 Skill ZIP](dist/cad-sketchup-mcp-v0.1.2.zip)。GitHub 文件页可下载原始文件，私有仓库需要访问权限；保留 [v0.1.1 包](dist/cad-sketchup-mcp-v0.1.1.zip) 与 [v0.1.0 首版包](dist/cad-sketchup-mcp-v0.1.0.zip)。
 
-给使用 SketchUp 2020、没有坯子插件的同学：把上面的 ZIP 与 [Codex 试用提示词](docs/给同学Codex的试用提示词_SU2020_无坯子.md) 一起提供给他的 Codex。坯子插件是可选辅助工具；SU2020 实机兼容性仍需先检查。
+给同学试用：把上面的 ZIP 与 [v0.1.2 完整试用提示词](docs/给同学Codex的试用提示词_v0.1.2.md) 一起提供给他的 Codex，先检查实际环境，不固定 SU 年份、套餐或模型。坯子插件是可选辅助工具。旧的 SU2020 提示词仅用于对应的历史环境。
 
 解压后把整个 `cad-sketchup-mcp` 目录复制到你的学习项目 `.agents/skills/` 下，最终为 `.agents/skills/cad-sketchup-mcp/SKILL.md`。保留所有引用文件，不覆盖已有同名 Skill。用 Codex 打开该学习项目，调用 `$cad-sketchup-mcp`；未出现时重新打开聊天或重启 Codex。
 
@@ -44,11 +44,15 @@ SU MCP 来源：[sketchup-mcp2 维护者仓库](https://github.com/zinin/sketchu
 
 更多示例见 [学生快速开始](skills/cad-sketchup-mcp/README.md)。
 
+已进入多栋多层、独立外观方案或场景交付时，在分阶段建模教程中按需读取 [进阶执行细节](skills/cad-sketchup-mcp/references/advanced-execution.md)。小任务只做相关检查，不要求学生先准备 JSON 或哈希报告。
+
 ## 已验证与待验证
 
 v0.1.0 已完成文件静态校验、ZIP 隔离解压检查、12 个合成场景的独立行为演练及定向复测。v0.1.1 新增三个进度入口与原创练习资产，已完成文件打包检查、DXF 独立静态几何检查、图示目检及 C1–C6 合成行为演练。演练验证的是规范引导下的决策，不是实际 MCP 调用或几何建模。
 
-真实新电脑安装、跨 SketchUp 版本、真实 DWG 与完整一层白模、Codex 界面发现及学生试用仍待验证。没有学生数据，不能声称已经提升效率或降低返工率。
+v0.1.2 把项目经验整理成按任务影响选择检查、差异化批量展开、墙板楼梯联动、源模型与场景保护及安全保存切换规则。文件检查与本轮合成桌面演练见 [迭代验收](validation/review-v0.1.2.md)；不是 MCP 或真实建模测试。
+
+已有一位使用 SU2023 与 Codex Luna 的同学提供了练习截图和反馈：可见建模进展，Agent 报告了保存与尺寸回读；最终 SKP 和完整调用日志尚未独立验收。另有骑楼及社区项目经验交接，不是本轮重做的实机测试。v0.1.2 的新电脑安装、跨版本兼容、自动发现与真实模型验收仍待验证，没有对照数据证明效率提升或返工率降低。
 
 详见 [验证说明](skills/cad-sketchup-mcp/references/validation.md)、[本次迭代验收](validation/review-v0.1.1.md)、[练习几何验收](validation/practice-geometry.md)、[首版演练验收](validation/review.md)与 [技术来源](skills/cad-sketchup-mcp/references/sources.md)。
 
@@ -62,7 +66,7 @@ v0.1.0 已完成文件静态校验、ZIP 隔离解压检查、12 个合成场景
 python scripts/check_and_package.py
 ```
 
-它仅检查仓库内教学文件并生成 `dist/` 的 12 文件 Skill ZIP（含练习），不连接 CAD／SU、不安装依赖。输出到 `validation/package-check.json`；打包不代表行为测试或实机验证已通过。
+它仅检查仓库内教学文件并生成 `dist/` 的 13 文件 Skill ZIP（含练习与按需参考），不连接 CAD／SU、不安装依赖。输出到 `validation/package-check.json`；打包不代表行为测试或实机验证已通过。
 
 学生直接用已生成的练习，不必运行代码。维护者如需重建练习文件，可用已有 ezdxf、Pillow 和中文字体运行 `scripts/create_practice_assets.py`；它只生成原创教学文件，不控制 CAD／SU。
 
