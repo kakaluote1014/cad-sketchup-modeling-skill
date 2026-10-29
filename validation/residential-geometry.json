@@ -1,0 +1,194 @@
+{
+  "timestamp_utc": "2026-10-29T05:26:20.581714+00:00",
+  "scope": "Static DXF geometry, PNG decode and in-memory corruption probes; no CAD/SU/MCP.",
+  "files": [
+    {
+      "checks": {
+        "r2004_mm": true,
+        "metric": true,
+        "supported_types": true,
+        "coplanar_z0": true,
+        "arc_normals": true,
+        "body_controls_10000_8000": true,
+        "WALL_EXTERNAL_region": true,
+        "WALL_EXTERNAL_closed_orthogonal": true,
+        "WALL_EXTERNAL_no_duplicate_edges": true,
+        "WALL_INTERNAL_region": true,
+        "WALL_INTERNAL_closed_orthogonal": true,
+        "WALL_INTERNAL_no_duplicate_edges": true,
+        "WALL_SHARED_region": true,
+        "WALL_SHARED_closed_orthogonal": true,
+        "WALL_SHARED_no_duplicate_edges": true,
+        "SLAB_BOUNDARY_exact_outline": true,
+        "VOID_exact_outline": true,
+        "BALCONY_exact_outline": true,
+        "all_five_door_boundaries": true,
+        "all_three_window_boundaries": true,
+        "two_flights_nine_nose_lines_each": true,
+        "middle_landing_outline": true,
+        "dxf_audit_no_errors_or_fixes": true
+      },
+      "pass": true,
+      "entity_count": 182,
+      "layers": {
+        "WALL_EXTERNAL": 52,
+        "WALL_SHARED": 8,
+        "WALL_INTERNAL": 18,
+        "DOOR_SYMBOL": 30,
+        "WINDOW_SYMBOL": 18,
+        "SLAB_BOUNDARY": 4,
+        "VOID": 4,
+        "BALCONY": 4,
+        "STAIR_SYMBOL": 32,
+        "ANNOTATION": 12
+      },
+      "wall_area_mm2": {
+        "WALL_EXTERNAL": 5540000,
+        "WALL_INTERNAL": 993600,
+        "WALL_SHARED": 1340000
+      },
+      "mismatched_cells": {
+        "WALL_EXTERNAL": [],
+        "WALL_INTERNAL": [],
+        "WALL_SHARED": []
+      },
+      "audit_errors": 0,
+      "audit_fixes": 0,
+      "file": "residential-source.dxf",
+      "sha256": "92be594143c16d555291b553fc355786436b5b5b1d402ed569ed158a7f772418"
+    },
+    {
+      "checks": {
+        "r2004_mm": true,
+        "metric": true,
+        "supported_types": true,
+        "coplanar_z0": true,
+        "arc_normals": true,
+        "body_controls_10000_8000": true,
+        "WALL_EXTERNAL_region": true,
+        "WALL_EXTERNAL_closed_orthogonal": true,
+        "WALL_EXTERNAL_no_duplicate_edges": true,
+        "WALL_INTERNAL_region": true,
+        "WALL_INTERNAL_closed_orthogonal": true,
+        "WALL_INTERNAL_no_duplicate_edges": true,
+        "WALL_SHARED_region": true,
+        "WALL_SHARED_closed_orthogonal": true,
+        "WALL_SHARED_no_duplicate_edges": true,
+        "SLAB_BOUNDARY_exact_outline": true,
+        "VOID_exact_outline": true,
+        "BALCONY_exact_outline": true,
+        "all_five_door_boundaries": true,
+        "all_three_window_boundaries": true,
+        "two_flights_nine_nose_lines_each": true,
+        "middle_landing_outline": true,
+        "dxf_audit_no_errors_or_fixes": true
+      },
+      "pass": true,
+      "entity_count": 170,
+      "layers": {
+        "WALL_EXTERNAL": 52,
+        "WALL_SHARED": 8,
+        "WALL_INTERNAL": 18,
+        "DOOR_SYMBOL": 30,
+        "WINDOW_SYMBOL": 18,
+        "SLAB_BOUNDARY": 4,
+        "VOID": 4,
+        "BALCONY": 4,
+        "STAIR_SYMBOL": 32
+      },
+      "wall_area_mm2": {
+        "WALL_EXTERNAL": 5540000,
+        "WALL_INTERNAL": 993600,
+        "WALL_SHARED": 1340000
+      },
+      "mismatched_cells": {
+        "WALL_EXTERNAL": [],
+        "WALL_INTERNAL": [],
+        "WALL_SHARED": []
+      },
+      "audit_errors": 0,
+      "audit_fixes": 0,
+      "file": "residential-clean-reference.dxf",
+      "sha256": "6d254a996dc2608bccc54d667937512df730cba13522fdc1d01e3110029768a2"
+    }
+  ],
+  "same_non_annotation_geometry": true,
+  "source_annotated_clean_unannotated": true,
+  "image": {
+    "size": [
+      1920,
+      1440
+    ],
+    "mode": "RGB"
+  },
+  "corruption_probes": [
+    {
+      "case": "wrong_units",
+      "rejected": true,
+      "failed_checks": [
+        "r2004_mm"
+      ]
+    },
+    {
+      "case": "missing_wall_edge",
+      "rejected": true,
+      "failed_checks": [
+        "WALL_SHARED_region",
+        "WALL_SHARED_closed_orthogonal"
+      ]
+    },
+    {
+      "case": "missing_void_edge",
+      "rejected": true,
+      "failed_checks": [
+        "VOID_exact_outline"
+      ]
+    },
+    {
+      "case": "shifted_balcony",
+      "rejected": true,
+      "failed_checks": [
+        "BALCONY_exact_outline"
+      ]
+    },
+    {
+      "case": "missing_stair_nose",
+      "rejected": true,
+      "failed_checks": [
+        "two_flights_nine_nose_lines_each"
+      ]
+    },
+    {
+      "case": "shifted_door_boundary",
+      "rejected": true,
+      "failed_checks": [
+        "all_five_door_boundaries"
+      ]
+    },
+    {
+      "case": "noncoplanar_wall",
+      "rejected": true,
+      "failed_checks": [
+        "coplanar_z0",
+        "WALL_EXTERNAL_closed_orthogonal"
+      ]
+    }
+  ],
+  "vertical_brief_arithmetic_only": {
+    "door_head": 750,
+    "window_head": 450,
+    "stair_mid": 1500.0,
+    "stair_top": 3000.0,
+    "flight_run": 2400,
+    "slab_hole_area_mm2": 9100000,
+    "three_storey_roof_top": 9000
+  },
+  "not_verified": [
+    "Real CAD/SU import or faces/normals",
+    "3D walls, stairs or openings",
+    "SKP save/reopen/editability",
+    "Student trial or efficiency",
+    "Design/code compliance"
+  ],
+  "all_static_checks_pass": true
+}

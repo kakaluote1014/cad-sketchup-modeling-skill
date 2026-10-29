@@ -12,21 +12,29 @@
 | 已接通，但底图未准备 | [CAD → SU 底图准备](skills/cad-sketchup-mcp/references/cad-preparation.md) | 干净、尺度正确、可编辑的底图 SKP |
 | 已接通，底图已准备 | [目标与尺寸检查、分阶段建模](skills/cad-sketchup-mcp/references/modeling.md) | 只修改指定楼层，阶段结果可检查、可编辑 |
 
+已有模型想改一处？用 [圈选截图＋参考样板](skills/cad-sketchup-mcp/references/local-edit.md)：圈出位置，说明修改内容与保留范围；可把目标标A、参考标B，再说“把A的门框改成B的样式，保留A的洞口尺寸”。
+
+可选 [Flash基础建模 → Sol接手审查与优化](skills/cad-sketchup-mcp/references/model-handoff.md)：按任务状态交接当前SKP、尺寸红线和待改清单，接手先读现场，附两段可复制提示词。不强制切换模型，不把这套分工当作已实测的能力或费用结论。
+
+[本地习惯记录](skills/cad-sketchup-mcp/references/preferences.md)：Skill在学习项目内创建或读取`.su-modeling/preferences.md`，合并你明确表达的工作偏好；下次使用和换模型接手时读取。记录留在本地，更新Skill保留它，不提交或打包，也不把项目尺寸学成默认值。
+
 想先练一遍？使用 [第一次练习](skills/cad-sketchup-mcp/references/practice.md)：原创 DXF 原图、清理参照、尺寸与洞口示意，以及每阶段可复制的指令。练习尺寸只用于练习，不是其他项目的默认参数。
+
+住宅作业进入 [住宅路线](skills/cad-sketchup-mcp/references/residential.md)：单户 → 指定标准层 → 首层／顶层差异 → 按需整栋。新增 [住宅教学片段](skills/cad-sketchup-mcp/references/residential-practice.md)，练墙、板洞、楼梯、阳台及人工修改后续建；先做一层，再自选三层差异任务。
 
 本仓库维护教学规范与 AI 协作规则。建模控制由现成的 SU MCP 提供；仓库不包含 MCP 服务端或第三方实现，不替代人的设计和结构判断。
 
 ## 下载与安装
 
-当前迭代 v0.1.2：[取得 Skill ZIP](dist/cad-sketchup-mcp-v0.1.2.zip)。GitHub 文件页可下载原始文件，私有仓库需要访问权限；保留 [v0.1.1 包](dist/cad-sketchup-mcp-v0.1.1.zip) 与 [v0.1.0 首版包](dist/cad-sketchup-mcp-v0.1.0.zip)。
+v0.2.0 教学试用版（Pre-release）：[发布与下载](https://github.com/kakaluote1014/cad-sketchup-modeling-skill/releases/tag/v0.2.0)，也可取仓库内 [Skill ZIP](dist/cad-sketchup-mcp-v0.2.0.zip)。更新内容和未验证事项见 [版本说明](docs/版本说明_v0.2.0.md)。历史包保留：[v0.1.2](dist/cad-sketchup-mcp-v0.1.2.zip)、[v0.1.1](dist/cad-sketchup-mcp-v0.1.1.zip)、[v0.1.0](dist/cad-sketchup-mcp-v0.1.0.zip)。
 
-给同学试用：把上面的 ZIP 与 [v0.1.2 完整试用提示词](docs/给同学Codex的试用提示词_v0.1.2.md) 一起提供给他的 Codex，先检查实际环境，不固定 SU 年份、套餐或模型。坯子插件是可选辅助工具。旧的 SU2020 提示词仅用于对应的历史环境。
+给同学试用：把上面的 ZIP 与 [v0.2.0 完整试用提示词](docs/给同学Codex的试用提示词_v0.2.0.md) 一起提供给他的 Codex，先检查实际环境，不固定 SU 年份、套餐或模型。坯子插件是可选辅助工具。旧版本提示词保留作历史记录，SU2020 提示词仅用于对应的历史环境。
 
 解压后把整个 `cad-sketchup-mcp` 目录复制到你的学习项目 `.agents/skills/` 下，最终为 `.agents/skills/cad-sketchup-mcp/SKILL.md`。保留所有引用文件，不覆盖已有同名 Skill。用 Codex 打开该学习项目，调用 `$cad-sketchup-mcp`；未出现时重新打开聊天或重启 Codex。
 
 也可克隆仓库后，复制 `skills/cad-sketchup-mcp`。仓库本身不会自动安装软件、接通 MCP 或修改全局配置。
 
-SU MCP 来源：[sketchup-mcp2 维护者仓库](https://github.com/zinin/sketchup-mcp2)、[v0.3.1 发布页](https://github.com/zinin/sketchup-mcp2/releases/tag/v0.3.1)。这是社区项目，不是 SketchUp／Trimble 官方产品。
+SU MCP 来源：[sketchup-mcp2 维护者仓库](https://github.com/zinin/sketchup-mcp2)、[v0.4.0 发布页](https://github.com/zinin/sketchup-mcp2/releases/tag/v0.4.0)。教程于2026-10-29复核并固定0.4.0，已有连接先读版本，不自动升级。这是社区项目，不是 SketchUp／Trimble 官方产品。
 
 ## 从当前进度开始
 
@@ -52,7 +60,9 @@ v0.1.0 已完成文件静态校验、ZIP 隔离解压检查、12 个合成场景
 
 v0.1.2 把项目经验整理成按任务影响选择检查、差异化批量展开、墙板楼梯联动、源模型与场景保护及安全保存切换规则。文件检查与本轮合成桌面演练见 [迭代验收](validation/review-v0.1.2.md)；不是 MCP 或真实建模测试。
 
-已有一位使用 SU2023 与 Codex Luna 的同学提供了练习截图和反馈：可见建模进展，Agent 报告了保存与尺寸回读；最终 SKP 和完整调用日志尚未独立验收。另有骑楼及社区项目经验交接，不是本轮重做的实机测试。v0.1.2 的新电脑安装、跨版本兼容、自动发现与真实模型验收仍待验证，没有对照数据证明效率提升或返工率降低。
+v0.2.0 同步 MCP0.4.0 的安装、兼容与保存说明，新增住宅路线、三层差异任务、原创 DXF／示意，以及圈选截图与参考样板的局部修改方法。圈选方法来自日常交流，不计作实机验收。实际文件、静态几何检查与文本桌面推演见 [本版验收](validation/review-v0.2.0.md)。没有操作真实 CAD/SU；没有完成新增练习的实机导入、建模或学生试用。
+
+已有一位使用 SU2023 与 Codex Luna 的同学提供了旧版练习截图和反馈：可见建模进展，Agent 报告了保存与尺寸回读；最终 SKP 和完整调用日志尚未独立验收。另有骑楼及社区项目经验交接，不是本轮重做的实机测试。新版的新电脑安装、跨版本兼容、自动发现与真实模型验收仍待验证，没有对照数据证明效率提升或返工率降低。
 
 详见 [验证说明](skills/cad-sketchup-mcp/references/validation.md)、[本次迭代验收](validation/review-v0.1.1.md)、[练习几何验收](validation/practice-geometry.md)、[首版演练验收](validation/review.md)与 [技术来源](skills/cad-sketchup-mcp/references/sources.md)。
 
@@ -66,8 +76,10 @@ v0.1.2 把项目经验整理成按任务影响选择检查、差异化批量展�
 python scripts/check_and_package.py
 ```
 
-它仅检查仓库内教学文件并生成 `dist/` 的 13 文件 Skill ZIP（含练习与按需参考），不连接 CAD／SU、不安装依赖。输出到 `validation/package-check.json`；打包不代表行为测试或实机验证已通过。
+它仅检查仓库内教学文件并生成 `dist/` 的 22 文件 Skill ZIP（含两种练习、按需参考与空白习惯模板），不连接 CAD／SU、不安装依赖；私人习惯目录排除。输出到 `validation/package-check.json`；打包不代表行为测试或实机验证已通过。
 
 学生直接用已生成的练习，不必运行代码。维护者如需重建练习文件，可用已有 ezdxf、Pillow 和中文字体运行 `scripts/create_practice_assets.py`；它只生成原创教学文件，不控制 CAD／SU。
+
+住宅素材由 `scripts/create_residential_assets.py` 生成，`scripts/check_residential_assets.py` 独立按练习依据检查墙域、符号、板洞与楼梯平面，并做内存损坏反例检查；数值高度只算术核对，不冒充三维实测。
 
 不要上传真实项目图纸、模型、私人配置、密钥或个人绝对路径。学生试用资料先脱敏，模型写入和系统安装另行说明目标与影响并取得授权。

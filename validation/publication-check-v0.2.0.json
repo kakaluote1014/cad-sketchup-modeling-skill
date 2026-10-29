@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-29",
+  "scope": "all existing git history blobs and non-ignored working files before publication",
+  "history_commits": 3,
+  "history_blobs": 60,
+  "working_files": 59,
+  "archive_occurrences_checked": 7,
+  "protected_files_unchanged": 17,
+  "runtime_preferences_git_ignored": true,
+  "runtime_preferences_not_tracked": true,
+  "runtime_preferences_not_in_zip": true,
+  "blank_template_in_zip": true,
+  "yaml": "passed",
+  "findings": []
+}

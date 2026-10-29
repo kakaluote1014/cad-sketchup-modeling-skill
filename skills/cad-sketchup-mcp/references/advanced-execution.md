@@ -7,7 +7,7 @@
 先读实际路径、`modified?`、编辑上下文和已获准范围，区分：
 
 - **已有路径、已保存且干净**：可以从已核对的磁盘文件制作字节一致的独立备份与目标副本，再打开目标并重读路径。复制前确认目的地，不能覆盖源件。
-- **有未保存修改**：先通过当前支持的保存副本能力，把内存成果保护到明确的独立文件并核验成功；只复制旧磁盘 SKP 不算备份当前状态。本版 MCP 对未命名模型与已有路径模型采用不同保存分支，见 [导出实现](https://github.com/zinin/sketchup-mcp2/blob/v0.3.1/mcp_for_sketchup/mcp_for_sketchup/handlers/export.rb)。未命名文件先保存到明确的新位置，不用临时导出路径冒充交付。
+- **有未保存修改**：先通过当前支持的保存副本能力，把内存成果保护到明确的独立文件并核验成功；只复制旧磁盘 SKP 不算备份当前状态。MCP0.4.0拒绝对未保存模型导出SKP；先保存到明确的新位置，不能反复重试临时导出，见 [导出实现](https://github.com/zinin/sketchup-mcp2/blob/v0.4.0/mcp_for_sketchup/mcp_for_sketchup/handlers/export.rb)。已有路径模型的临时导出也须转为明确交付位置并核验。
 
 `save_copy` 是 API 的保存副本能力，不能据个别切换事故宣称它总会修改源件。切文件还可能触发客户端、插件或保存提示；未保护内存成果不切换，不擅自覆盖源件或丢弃修改。仍出现保存提示时，确认保护结果并让用户决定提示动作。见 [Model#save_copy](https://ruby.sketchup.com/Sketchup/Model.html#save_copy-instance_method)。
 

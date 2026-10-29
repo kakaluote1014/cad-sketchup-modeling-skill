@@ -9,6 +9,7 @@ __pycache__/
 .codex/
 .agents/
 _build/
+.su-modeling/
 validation/sources/
 validation/install-smoke/
 validation/workspace-before.json
@@ -18,5 +19,7 @@ validation/workspace-before.json
 *.dxf
 !skills/cad-sketchup-mcp/assets/practice/practice-source.dxf
 !skills/cad-sketchup-mcp/assets/practice/practice-clean-reference.dxf
+!skills/cad-sketchup-mcp/assets/residential/residential-source.dxf
+!skills/cad-sketchup-mcp/assets/residential/residential-clean-reference.dxf
 *.rbz
 *.bak
